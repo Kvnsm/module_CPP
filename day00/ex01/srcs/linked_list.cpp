@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   linked_list.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 20:38:03 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/16 21:39:33 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/03/17 12:54:23 by ksam              #+#    #+#             */
+/*   Updated: 2021/03/17 15:36:34 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#include "../includes/phonebook.hpp"
 
-#include <string>
-#include <iostream>
-#include "Details.class.hpp"
-
-#endif
+void		data_backpusher(Master *manager)
+{
+	Details	var;
+	
+	var.prev = manager->last;
+	if (!manager->first)
+		manager->first = &var;
+	if (manager->last)
+		manager->last->next = &var;
+	manager->last = &var;
+	manager->count++;
+}
