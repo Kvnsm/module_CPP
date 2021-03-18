@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:38:03 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/18 03:10:11 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/18 22:12:20 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <ctype.h>
 #include "Details.class.hpp"
+#define SEPARATOR "|"
 
-void    	add_function(Master *contact);
-void		data_backpusher(Master *manager);
-void		search_function(Master *contact);
-Details		fill();
-
+void	display(Details *contact, int index);
 #endif
