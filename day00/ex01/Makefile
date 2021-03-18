@@ -6,7 +6,7 @@
 #    By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:42:43 by ksam              #+#    #+#              #
-#    Updated: 2021/03/17 15:04:33 by ksam             ###   ########lyon.fr    #
+#    Updated: 2021/03/18 02:42:39 by ksam             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ HEADER = includes/phonebook.hpp
 SRCS =	srcs/add.cpp \
 		srcs/Details.class.cpp \
 		srcs/linked_list.cpp \
-		srcs/phonebook.cpp
+		srcs/phonebook.cpp \
+		srcs/search.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -g3
 
 
 $(NAME)	: $(OBJS) $(HEADER)

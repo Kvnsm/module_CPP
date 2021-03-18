@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 12:54:23 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/17 15:36:34 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/18 02:16:03 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void		data_backpusher(Master *manager)
 {
 	Details	var;
 	
+	var = fill();
 	var.prev = manager->last;
 	if (!manager->first)
 		manager->first = &var;
@@ -23,4 +24,5 @@ void		data_backpusher(Master *manager)
 		manager->last->next = &var;
 	manager->last = &var;
 	manager->count++;
+	var.index = manager->count;
 }

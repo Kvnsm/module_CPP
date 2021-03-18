@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:44:07 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/17 17:17:14 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/18 00:59:23 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Details
 
 		Details		*next;
 		Details		*prev;
+		int			index;
 
         Details(void);
         ~Details(void);

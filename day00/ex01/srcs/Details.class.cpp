@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:42:40 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/17 17:17:20 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/18 02:16:46 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,21 @@ Details::Details(void)
 {
     std::cout << "Constructor called" << std::endl;
 
-    // this->first_name = "";
-    // this->last_name = "";
-    // this->nickname = "";
-    // this->login = "";
-    // this->postal_address = "";
-    // this->email = "";
-    // this->phone_number = "";
-    // this->birthday = "";
-    // this->fav_meal = "";
-    // this->underwear_color = "";
-    // this->darkest_secret = "";
+    this->first_name = "";
+    this->last_name = "";
+    this->nickname = "";
+    this->login = "";
+    this->postal_address = "";
+    this->email = "";
+    this->phone_number = "";
+    this->birthday = "";
+    this->fav_meal = "";
+    this->underwear_color = "";
+    this->darkest_secret = "";
 
 	this->prev = NULL;
 	this->next = NULL;
+	this->index = 0;
     return;
 }
 
