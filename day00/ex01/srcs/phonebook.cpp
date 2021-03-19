@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 13:45:42 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/18 22:16:36 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 01:00:02 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << std::endl;
 		std::cout << "Hello, you are in your phonebook ! What can I do for you ?" << std::endl;
-		std::cin >> line;
+		getline(std::cin, line);
 		if (!line.compare("ADD"))
 		{
 			if (i == 7)
@@ -39,17 +39,31 @@ int main(int argc, char **argv)
 			if (i != -1)
 			{
 				std::cout << "Select a contact by enter his index" << std::endl;
-				std::string test;
-				std::cin >> test;
-				
-				index = std::stoi(test);
-				contact[index].getdata();
+				std::string temp;
+				getline(std::cin, temp);
+				std::stringstream(temp) >> index;
+				index -= 1;
+				if (index <= i)
+					contact[index].getdata();
+				else
+					std::cout << "Index not found" << std::endl;
 			}
+		}
+		else if (!line.compare("!help"))
+		{
+			std::cout << std::endl;
+			std::cout << "Welcom to my phonebook, there are only three commands" << std::endl \
+			<< "Type ADD to create a new contact, limit of contacts is 8." << std::endl \
+			<< "Type SEARCH to list existing contact, then enter the index for more details." << std::endl \
+			<< "Type EXIT to exit the programme, WARNING : when the programme quit it will DELETE all contacts." << std::endl;
 		}
 		else if (!line.compare("EXIT"))
 			break;
 		else
-			std::cout << "Invalid command" << std::endl;
+		{
+			std::cout << "Invalid command. " \
+			<< "Type !help for more informations" << std::endl;
+		}
 	}
     return (0);
 }

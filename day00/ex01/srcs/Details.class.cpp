@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:42:40 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/18 22:03:51 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 00:52:01 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,45 +34,44 @@ Details::~Details(void)
 }
 
 void	Details::putdata()
-{
+{	
 	std::cout << "First name :" << std::endl;
-	std::cin >> first_name;
+	getline(std::cin, first_name);
 
 	std::cout << "Last name:" << std::endl;
-	std::cin >> last_name;
+	getline(std::cin, last_name);
 
 	std::cout << "Nickname:" << std::endl;
-	std::cin >> nickname;
+	getline(std::cin, nickname);
 
 	std::cout << "Login:" << std::endl;
-	std::cin >> login;
+	getline(std::cin, login);
 
 	std::cout << "Postal address:" << std::endl;
-	std::cin >> postal_address;
+	getline(std::cin, postal_address);
 
 	std::cout << "Email address:" << std::endl;
-	std::cin >> email;
+	getline(std::cin, email);
 
 	std::cout << "Phone number:" << std::endl;
-	std::cin >> phone_number;
+	getline(std::cin, phone_number);
 
 	std::cout << "Birthday date:" << std::endl;
-	std::cin >> birthday;
+	getline(std::cin, birthday);
 
 	std::cout << "Favorite meal:" << std::endl;
-	std::cin >> fav_meal;
+	getline(std::cin, fav_meal);
 
 	std::cout << "Underwear color:" << std::endl;
-	std::cin >> underwear_color;
+	getline(std::cin, underwear_color);
 
 	std::cout << "Darkest secret:" << std::endl;
-	std::cin >> darkest_secret;
+	getline(std::cin, darkest_secret);
 }
 
 void	Details::getdata()
 {
 	std::cout << "First name: " << first_name << std::endl;
-
 
 	std::cout << "Last name: " << last_name << std::endl;
 
