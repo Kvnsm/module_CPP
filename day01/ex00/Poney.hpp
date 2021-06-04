@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 05:03:58 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/20 00:47:43 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/04 19:52:34 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Poney
 		std::string getname(void);
 		std::string getage(void);
 		std::string getlength(void);
+		void		description(void);
 	private:
 		std::string name;
 		std::string age;
