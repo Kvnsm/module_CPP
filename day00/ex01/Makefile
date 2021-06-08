@@ -6,7 +6,7 @@
 #    By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 13:42:43 by ksam              #+#    #+#              #
-#    Updated: 2021/03/18 18:56:14 by ksam             ###   ########lyon.fr    #
+#    Updated: 2021/06/08 06:32:30 by ksam             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS =	srcs/Details.class.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 
 $(NAME)	: $(OBJS) $(HEADER)
