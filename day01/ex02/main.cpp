@@ -6,11 +6,15 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 07:04:22 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/08 09:50:47 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/08 16:35:37 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
 int main()
 {
+	Zombie test("Lent", "Etienne");
+	test.advert();
 	return (0);
 }
