@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 11:50:15 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/18 16:00:09 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/06/18 16:05:08 by ksam              #+#    #+#             */
+/*   Updated: 2021/06/18 16:54:34 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BRAIN_H
+# define BRAIN_H
+
 #include <string>
 #include <iostream>
+#include <sstream>
 
-int main()
+class Brain
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *ptr = &str;
-	std::string &ref = str;
+	public:
+		Brain();
+		~Brain();
+		std::string	identify();
+	private:
+		// int	neurones;
+		// int	conscience;
+		// int	prise_decision;
+		// int	creativite;
+		// int	memoire;
+		// int	attention;
+		// int	emotions;
+};
 
-	std::cout << str << std::endl;
-	std::cout << ptr << " | " << &str << std::endl;
-	std::cout << ref << std::endl;
-	return (0);
-}
+#endif
