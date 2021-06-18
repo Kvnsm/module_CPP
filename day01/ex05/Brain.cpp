@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:21:34 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/18 16:54:53 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/18 17:44:51 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ Brain::~Brain()
 
 std::string	Brain::identify()
 {
-	const long adr = (long)this;
-
-	std::stringstream ss;
-	ss << "0x" << std::uppercase << std::hex << adr;
-	return (ss.str());
+	std::stringstream adr;
+	adr << this;
+	return (adr.str());
 }
 
