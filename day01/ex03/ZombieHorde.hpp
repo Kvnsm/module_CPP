@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:36:49 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/15 18:21:49 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/18 11:22:33 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,21 @@
 class ZombieHorde
 {
 	public:
-		ZombieHorde(int n);
+		ZombieHorde();
 		~ZombieHorde();
-		std::string	randomChump();
-		std::string	randomType();
-		void	announce(Zombie *none);
+		ZombieHorde(int n);
+		void		announce_all();
+		int			nbZombies;
+		void		announce(int i);
+
 	private:
 		std::string name;
 		std::string type;
-		void	select_name(int index);
-		void	select_type(int index);
+		Zombie 		*newZombies;
+		std::string	randomChump();
+		std::string	randomType();
+		void		select_name(int index);
+		void		select_type(int index);
 };
 
 #endif

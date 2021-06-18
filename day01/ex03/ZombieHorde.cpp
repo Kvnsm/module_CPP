@@ -6,16 +6,26 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:36:53 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/15 18:22:55 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/18 11:14:33 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
 
+ZombieHorde::ZombieHorde()
+{
+	name = "";
+	type = "";
+	nbZombies = 0;
+	newZombies = NULL;
+
+	return;
+}
+
 ZombieHorde::ZombieHorde(int n)
 {
 	srand((unsigned) time(0) + clock());
-	Zombie	*newZombies = new Zombie[n];
+	newZombies = new Zombie[n];
 	int i;
 
 	i = 0;
@@ -23,14 +33,18 @@ ZombieHorde::ZombieHorde(int n)
 	{
 		newZombies[i].type = randomType();
 		newZombies[i].name = randomChump();
-		newZombies[i].advert();
+		// newZombies[i].advert();
 		i++;
 	}
+	nbZombies = n;
+	// announce_all();
 	return;
 }
 
 ZombieHorde::~ZombieHorde(void)
 {
+	if (newZombies)
+		delete[] newZombies;
 	return;
 }
 
@@ -84,4 +98,17 @@ void	ZombieHorde::select_type(int index)
 		"ch3ater",
 	};
 	this->type = type[index];
+}
+
+void	ZombieHorde::announce(int i)
+{
+	std::cout << "Hello, my name is " << newZombies[i].name << " and I am a " << newZombies[i].type << std::endl;
+}
+
+void	ZombieHorde::announce_all()
+{
+	for (int i = 0; i < nbZombies; i++)
+	{
+		announce(i);
+	}
 }

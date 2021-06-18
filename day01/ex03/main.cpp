@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:17:29 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/15 17:12:49 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/18 11:44:11 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main()
 {
-	ZombieHorde(3);
+	ZombieHorde test = ZombieHorde(2);
+	test.announce_all();
 	return(0);
 }
