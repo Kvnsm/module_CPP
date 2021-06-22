@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:05:08 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/18 17:24:12 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 01:27:31 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ class Brain
 	public:
 		Brain();
 		~Brain();
-		std::string	identify();
+		std::string	identify() const;
 	private:
-		// int	neurones;
-		// int	conscience;
-		// int	prise_decision;
-		// int	creativite;
-		// int	memoire;
-		// int	attention;
-		// int	emotions;
+		int	neurones;
+		int	conscience;
+		int	prise_decision;
+		int	creativite;
+		int	memoire;
+		int	attention;
+		int	emotions;
 };
 
 #endif
