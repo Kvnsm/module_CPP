@@ -6,7 +6,7 @@
 #    By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/24 18:46:10 by ksam              #+#    #+#              #
-#    Updated: 2021/06/24 18:46:17 by ksam             ###   ########lyon.fr    #
+#    Updated: 2021/06/26 22:16:59 by ksam             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) *.replace
 fclean:		clean
 			$(RM) $(NAME)
 re:			fclean 	all
