@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:25:26 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/28 11:34:00 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 14:31:06 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -29,6 +30,13 @@ class Fixed
 
 		int		getRawBits(void) const; // Return the raw value of the fixed point value
 		void	setRawBits(const int raw); // that set the raw value of the fixed point value
+
+		Fixed(const int nb);
+		Fixed(const float nb);
+		float toFloat(void) const;
+		int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &o, Fixed const &nb);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:39:44 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/28 11:34:18 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/28 11:52:27 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &n)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->value = n.getRawBits();
+	if (this != &n)
+		this->value = n.getRawBits();
 	return (*this); // return the existing object
 }
 
