@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 19:25:26 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/28 11:34:00 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/06/27 19:30:36 by ksam              #+#    #+#             */
+/*   Updated: 2021/06/27 19:32:39 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
-
 #include <iostream>
+#include "Fixed.hpp"
 
-class Fixed
+int main()
 {
-	private:
-		int	value;
-		static const int bits = 8; // Value equal to 8
-	public:
-		Fixed();
-		Fixed(const Fixed &n); // copy
-		~Fixed();
-		
-		Fixed	&operator=(const Fixed &n);
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-		int		getRawBits(void) const; // Return the raw value of the fixed point value
-		void	setRawBits(const int raw); // that set the raw value of the fixed point value
-};
+	c = b;
 
-#endif
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+
+	return (0);
+}
