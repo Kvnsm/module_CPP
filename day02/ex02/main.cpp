@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:30:36 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/28 20:53:35 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/29 16:10:54 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 
 int main( void )
 {
-	Fixed a(12);
-	Fixed b(1);
-
-	std::cout << a * b << std::endl;
-
+	Fixed a(1);
+	Fixed b(2);
+	
+	std::cout << Fixed::min(b, a) << std::endl;
     return 0;
 }

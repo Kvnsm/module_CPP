@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:39:44 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/28 20:53:25 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/06/29 16:13:50 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,32 +75,32 @@ std::ostream &operator<<(std::ostream &o, Fixed const &nb)
     return o;
 }
 
-bool	Fixed::operator>(const Fixed &n)
+bool	Fixed::operator>(const Fixed &n) const
 {
 	return (this->getRawBits() > n.getRawBits());
 }
 
-bool	Fixed::operator<(const Fixed &n)
+bool	Fixed::operator<(const Fixed &n) const
 {
 	return (this->getRawBits() < n.getRawBits());
 }
 
-bool	Fixed::operator>=(const Fixed &n)
+bool	Fixed::operator>=(const Fixed &n) const
 {
 	return (this->getRawBits() >= n.getRawBits());
 }
 
-bool	Fixed::operator<=(const Fixed &n)
+bool	Fixed::operator<=(const Fixed &n) const
 {
 	return (this->getRawBits() <= n.getRawBits());
 }
 
-bool	Fixed::operator==(const Fixed &n)
+bool	Fixed::operator==(const Fixed &n) const
 {
 	return (this->getRawBits() == n.getRawBits());
 }
 
-bool	Fixed::operator!=(const Fixed &n)
+bool	Fixed::operator!=(const Fixed &n) const
 {
 	return (this->getRawBits() != n.getRawBits());
 }
@@ -123,8 +123,84 @@ Fixed	Fixed::operator-(const Fixed &n)
 
 Fixed	Fixed::operator*(const Fixed &n)
 {
-	Fixed ret;
+	Fixed	ret;
+	long	tmp, temporis;
 	
-	ret.setRawBits(this->getRawBits() * n.getRawBits());
+	tmp = (long)this->getRawBits();
+	temporis = (long)n.getRawBits();
+	ret.setRawBits(tmp * temporis / (1 << this->bits));
 	return (ret);
+}
+
+Fixed	Fixed::operator/(const Fixed &n)
+{
+	Fixed	ret;
+	long	tmp, temporis;
+	
+	tmp = (long)this->getRawBits();
+	temporis = (long)n.getRawBits();
+	ret.setRawBits(tmp * (1 << this->bits) / temporis);
+	return (ret);
+}
+
+Fixed	Fixed::operator++()
+{
+	Fixed	temp;
+
+	temp.value = ++value;
+	return (temp);
+}
+
+Fixed	Fixed::operator--()
+{
+	Fixed temp;
+
+	temp.value = --value;
+	return (temp);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed temporis;
+
+	temporis.value = value++;
+	return (temporis);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed temporis;
+
+	temporis.value = value--;
+	return (temporis);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed &Fixed::min(const Fixed &a,const Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (b > a)
+		return (b);
+	else
+		return (a);
+}
+
+const Fixed &Fixed::max(const Fixed &a,const Fixed &b)
+{
+	if (b > a)
+		return (b);
+	return (a);
 }
