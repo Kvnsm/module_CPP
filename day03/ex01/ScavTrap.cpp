@@ -6,11 +6,17 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:47:39 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/01 14:35:13 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/02 18:09:11 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+	std::cout << "ScavTrap default constructor" << std::endl;
+	return;
+}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -19,7 +25,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->energypoints = 50;
 	this->attackdamage = 20;
 
-	std::cout << "ScavTrap default constructor" << std::endl;
+	std::cout << "ScavTrap param constructor" << std::endl;
 	return;
 }
 

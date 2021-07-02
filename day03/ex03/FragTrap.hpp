@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:38:20 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/02 18:08:12 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/01 15:21:13 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/02 18:05:39 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#ifndef FRAG_TRAP_H
+# define FRAG_TRAP_H
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void	guardGate();
+		FragTrap();
+		FragTrap(std::string name);
+		~FragTrap();
+		void	highFivesGuys(void);
 };
-
 
 #endif

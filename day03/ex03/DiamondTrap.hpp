@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:38:20 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/02 18:08:12 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/01 21:34:25 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/02 18:01:17 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#ifndef DIAMOND_TRAP_H
+# define DIAMOND_TRAP_H
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class DiamondTrap: public FragTrap, public ScavTrap
 {
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void	guardGate();
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		~DiamondTrap();
 };
-
-
 #endif

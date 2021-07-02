@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 15:21:13 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/01 17:42:12 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/02 18:07:46 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class FragTrap: public ClapTrap
 {
 	public:
+		FragTrap();
 		FragTrap(std::string name);
 		~FragTrap();
 		void	highFivesGuys(void);
