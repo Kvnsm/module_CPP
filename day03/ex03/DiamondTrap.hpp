@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:34:25 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/02 18:01:17 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/03 18:08:34 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,10 @@ class DiamondTrap: public FragTrap, public ScavTrap
 		DiamondTrap();
 		DiamondTrap(std::string name);
 		~DiamondTrap();
+		void	whoAmI();
+		void	highFivesGuys();
+		void	guardGate();
+	private:
+		std::string name;
 };
 #endif

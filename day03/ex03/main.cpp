@@ -6,13 +6,14 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:40:51 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/02 18:19:56 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/03 18:09:02 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -35,7 +36,7 @@ int main()
 	// std::cout << std::endl;
 	// sweaty.guardGate();
 
-	FragTrap skye("Jok'air");
+	// FragTrap skye("Jok'air");
 
 	// std::cout << "Jok'air name: " << skye.name << std::endl;
 	// std::cout << "Jok'air HP: " << skye.hitpoints << std::endl;
@@ -45,5 +46,10 @@ int main()
 	// std::cout << std::endl;
 	// skye.highFivesGuys();
 
+	DiamondTrap KO("KO");
+
+	KO.whoAmI();
+	KO.highFivesGuys();
+	KO.guardGate();
 	return (0);
 }
