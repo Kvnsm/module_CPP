@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 13:45:42 by ksam              #+#    #+#             */
-/*   Updated: 2021/03/19 01:00:02 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/17 09:26:14 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int main(int argc, char **argv)
 	std::string line;
 	int		i;
 	int		index;
+	int		oldest;
     
 	i = -1;
 	index = 0;
+	oldest = 0;
 	while (line.compare("EXIT"))
 	{
 		std::cout << std::endl;
@@ -29,24 +31,48 @@ int main(int argc, char **argv)
 		if (!line.compare("ADD"))
 		{
 			if (i == 7)
-				std::cout << "Phonebook is full, limit reached" << std::endl;
+			{
+				std::cout << "Phonebook is full, limit reached, the oldest contact will be remplace (Y/n)" << std::endl;
+				std::string	temporis;
+				getline(std::cin, temporis);
+				if (!temporis.compare("Y"))
+				{
+					contact[oldest].putdata();
+					oldest++;
+					if (oldest == 7)
+						oldest = 0;
+				}
+			}
 			else
 				contact[++i].putdata();
 		}
 		else if (!line.compare("SEARCH"))
 		{
 			display(contact, i);
-			if (i != -1)
+			if (i > -1)
 			{
 				std::cout << "Select a contact by enter his index" << std::endl;
 				std::string temp;
+				int	flag = 0;
 				getline(std::cin, temp);
-				std::stringstream(temp) >> index;
-				index -= 1;
-				if (index <= i)
-					contact[index].getdata();
-				else
-					std::cout << "Index not found" << std::endl;
+				for (int i = 0; i < temp.length(); i++)
+				{
+					if (!isdigit(temp[i]))
+					{
+						std::cout << "Error: Only number accepted" << std::endl;
+						flag = 1;
+						break ;
+					}
+				}
+				if (!flag)
+				{
+					std::stringstream(temp) >> index;
+					index -= 1;
+					if (index <= i)
+						contact[index].getdata();
+					else
+						std::cout << "Index not found" << std::endl;
+				}
 			}
 		}
 		else if (!line.compare("!help"))
