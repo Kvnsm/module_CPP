@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 14:42:21 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/19 15:36:05 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/19 14:45:02 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/19 15:26:21 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-int	main()
+#include <iostream>
+#include <string>
+
+class Zombie
 {
-	Zombie	stacky("Easy");
-	stacky.announce();
-	std::cout << std::endl;
-	
-	Zombie *heapy;
-	heapy =  heapy->newZombie("Hippie");
-	heapy->announce();
-	std::cout << std::endl;
-	
-	heapy->randomChump("Peasy");
-	delete heapy;
-	return (0);
-}
+	public:
+		Zombie(std::string name);
+		~Zombie();
+		void	announce(void);
+		Zombie	*newZombie(std::string name);
+		void	randomChump(std::string name);
+	private:
+		std::string	name;
+};
+
+#endif

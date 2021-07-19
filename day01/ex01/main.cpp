@@ -5,25 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 14:42:21 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/19 15:36:05 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/19 15:39:54 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/19 17:31:20 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main()
+int main()
 {
-	Zombie	stacky("Easy");
-	stacky.announce();
+	Zombie	Classie;
+	Zombie	*Hordy;
+
+	Hordy = Classie.zombieHorde(5, "Ordi");
+
 	std::cout << std::endl;
-	
-	Zombie *heapy;
-	heapy =  heapy->newZombie("Hippie");
-	heapy->announce();
+
+	int i = 0;
+
+	while (i < 5)
+	{
+		Hordy->announce();
+		i++;
+	}
+
 	std::cout << std::endl;
-	
-	heapy->randomChump("Peasy");
-	delete heapy;
+
+	delete[] Hordy;
 	return (0);
 }
