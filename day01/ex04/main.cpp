@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 17:04:55 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/22 18:47:58 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/23 21:29:49 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,18 @@ int main(int argc, char **argv)
 			}
 			to_ret = to_ret + cache + "\n";
 		}
+		myfile.close();
+	}
+	else
+		std::cout << "Error: File can't be open" << std::endl;
+
+
+	myfile.open(replace, std::fstream::out | std::fstream::app);
+	if (myfile.is_open())
+	{
+		std::cout << "Creation of replace FD" << std::endl;
+		myfile << to_ret;
+		myfile.close();
 	}
 	else
 		std::cout << "Error: File can't be open" << std::endl;
