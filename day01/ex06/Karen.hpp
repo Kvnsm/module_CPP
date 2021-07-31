@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex01.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 20:21:08 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/08 07:01:14 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/31 13:26:10 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/31 13:26:14 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef KAREN_H
+# define KAREN_H
+
 #include <iostream>
+#include <string>
 
-void	memoryLeak()
+class Karen
 {
-	std::string	*panthere = new std::string("String panthere");
-	std::cout << *panthere << std::endl;
-	delete panthere;
-}
+	public:
+		Karen(void);
+		~Karen();
+		void	complain(std::string level);
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+};
 
-int main()
-{
-	memoryLeak();
-	return (0);
-}
+#endif

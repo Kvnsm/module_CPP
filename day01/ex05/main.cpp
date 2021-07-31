@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 01:15:09 by ksam              #+#    #+#             */
-/*   Updated: 2021/06/22 01:26:42 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/07/29 17:21:08 by ksam              #+#    #+#             */
+/*   Updated: 2021/07/31 13:10:07 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Karen.hpp"
 
-Human::Human()
+int main(void)
 {
-	return;
-}
+	Karen karen;
 
-Human::~Human()
-{
-	return;
-}
-
-const Brain &Human::getBrain() const
-{
-    return (this->brain);
-}
-
-std::string Human::identify(void) const
-{
-	return (this->brain.identify());
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+	karen.complain("WARNING");
+	karen.complain("ERROR");
+	return (0);
 }

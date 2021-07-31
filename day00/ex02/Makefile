@@ -5,29 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/24 18:46:10 by ksam              #+#    #+#              #
-#    Updated: 2021/06/26 22:16:59 by ksam             ###   ########lyon.fr    #
+#    Created: 2021/07/31 13:34:17 by ksam              #+#    #+#              #
+#    Updated: 2021/07/31 14:18:21 by ksam             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-CC			= clang++
-FLAGS		= -Wall -Werror -Wextra -std=c++98
+default : all
 
-NAME		= replace
+NAME = DreamJob
 
-SRCS		= main.cpp
-OBJS		= $(SRCS:.cpp=.o)
+HEADER = Account.hpp
 
-RM			= rm -f
+SRCS =	Account.cpp \
+		tests.cpp
 
-all:		$(NAME)
+OBJS = $(SRCS:.cpp=.o)
 
-$(NAME):	$(OBJS)
-			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
-clean:
-			$(RM) $(OBJS) *.replace
-fclean:		clean
-			$(RM) $(NAME)
-re:			fclean 	all
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
-.PHONY:		all clean fclean re
+
+$(NAME)	: $(OBJS) $(HEADER)
+		clang++ $(FLAGS) -o $(NAME) $(OBJS)
+
+all		: $(NAME)
+
+clean	:
+		rm -f $(OBJS)
+
+fclean	: clean
+		rm -f $(NAME)
+
+re		: fclean all
+
+.PHONY	: clean fclean re all
