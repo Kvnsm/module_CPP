@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:34:35 by ksam              #+#    #+#             */
-/*   Updated: 2021/07/01 14:38:17 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/07/31 14:48:29 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "Super potion used, and recovery " << amount << " HP & EP" << std::endl;
 	this->energypoints += amount;
 	this->hitpoints += amount;
-
-	if (this->energypoints > 10)
-		this->energypoints = 10;
-	if (this->hitpoints > 10)
-		this->hitpoints = 10;
-	std::cout << "HP & EP restored (" << this->hitpoints << "/10)(" << this->energypoints << "/10)" << std::endl;
 }
