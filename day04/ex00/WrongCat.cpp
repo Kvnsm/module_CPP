@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 17:30:16 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:01:49 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/02 19:10:59 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#include "WrongCat.hpp"
 
-#include "Animal.hpp"
-
-class Cat : public Animal
+WrongCat::WrongCat()
 {
-	public:
-		Cat();
-		~Cat();
-		void makeSound() const;
-};
+	type = "Wrong Cat";
+	std::cout << type << " is born" << std::endl;
+}
 
-#endif
+WrongCat::~WrongCat()
+{
+	std::cout << type << " is dead" << std::endl;
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "Meow!!" << std::endl;
+}
