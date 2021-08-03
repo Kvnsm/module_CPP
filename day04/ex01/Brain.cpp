@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:45:10 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/03 19:02:03 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/08/03 19:32:19 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Brain &Brain::operator=(Brain const &other)
 		for (int i = 0; i < 100; ++i)
 			this->ideas[i] = other.getIdea(i);
 	}
-	return *this;
+	return (*this);
 }
 
 Brain::~Brain()

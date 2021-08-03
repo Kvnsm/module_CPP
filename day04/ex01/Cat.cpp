@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:37:55 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/03 18:59:17 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/08/03 19:43:19 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Cat &Cat::operator=(Cat const &other)
 {
 	if (this != &other)
 	{
-		this->~Cat();
+		delete this->brain;
 		this->brain = new Brain(*other.getBrain());
 		this->Animal::operator=(other);
 	}

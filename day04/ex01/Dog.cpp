@@ -6,7 +6,7 @@
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 17:39:06 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/03 19:00:03 by ksam             ###   ########lyon.fr   */
+/*   Updated: 2021/08/03 19:43:15 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Dog &Dog::operator=(Dog const &other)
 {
 	if (this != &other)
 	{
-		this->~Dog();
+		delete this->brain;
 		this->brain = new Brain(*other.getBrain());
 		this->Animal::operator=(other);
 	}
