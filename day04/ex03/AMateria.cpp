@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 15:01:23 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 17:55:46 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "AMateria.hpp"
 
-WrongCat::WrongCat()
+AMateria::AMateria(std::string const &type)
 {
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
+	std::cout << "Param constructor AMateria" << std::endl;
+	this->type = type;
 }
 
-WrongCat::~WrongCat()
+std::string const & AMateria::getType() const
 {
-	std::cout << type << " is dead" << std::endl;
-}
-
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
+	return (this->type);
 }

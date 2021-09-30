@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 17:27:51 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 17:52:39 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef IMATERIASOURCE_H
+# define IMATERIASOURC_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include <string>
 
-WrongCat::~WrongCat()
+class IMateriaSource
 {
-	std::cout << type << " is dead" << std::endl;
-}
+	public:
+		virtual ~IMateriaSource(){}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+#endif

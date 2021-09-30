@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/26 01:15:05 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/26 09:35:32 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include "ICharacter.hpp"
+#include <iostream>
+#include <string>
 
-WrongCat::~WrongCat()
+class Character : public ICharacter
 {
-	std::cout << type << " is dead" << std::endl;
-}
+	public:
+		std::string *inv[4];
+};
 
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+#endif

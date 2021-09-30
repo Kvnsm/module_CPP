@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 15:31:21 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 17:50:31 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef ICHARACTER_H
+# define ICHARACTER_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
 
-WrongCat::~WrongCat()
+class ICharacter
 {
-	std::cout << type << " is dead" << std::endl;
-}
-
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+	public:
+		virtual ~ICharacter() {};
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
+#endif

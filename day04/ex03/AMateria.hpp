@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 15:01:21 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 17:45:54 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef AMATERIA_H
+# define AMATERIA_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include <iostream>
+#include <string>
 
-WrongCat::~WrongCat()
+class AMateria
 {
-	std::cout << type << " is dead" << std::endl;
-}
+	protected:
+		std::string const type;
+	public:
+		AMateria(std::string const &type);
+		std::string const & getType() const; // Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
 
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+#endif

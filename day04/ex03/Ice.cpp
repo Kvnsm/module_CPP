@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 17:58:34 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 18:12:40 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Ice.hpp"
 
-WrongCat::WrongCat()
+Ice::Ice() : AMateria("ice")
 {
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
+
 }
 
-WrongCat::~WrongCat()
+Ice::Ice(Ice const & ice) : AMateria("ice")
 {
-	std::cout << type << " is dead" << std::endl;
+	
 }
 
-void WrongCat::makeSound() const
+AMateria * Ice::clone() const
 {
-	std::cout << "Wrong Meow!!" << std::endl;
+	return (new Ice(*this));
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "*shoot an ice bolt at ", target.getName(), " *";
 }

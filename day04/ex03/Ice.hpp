@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 17:58:42 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/24 18:13:11 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef ICE_H
+# define ICE_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include <string>
+#include <iostream>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-WrongCat::~WrongCat()
+class Ice : public AMateria
 {
-	std::cout << type << " is dead" << std::endl;
-}
+	public:
+		Ice();
+		Ice(Ice const & ice);
+		~Ice();
+		virtual AMateria * clone() const;
+		virtual void use(ICharacter& target);
+};
 
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+#endif

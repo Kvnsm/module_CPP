@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksam <ksam@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 19:07:52 by ksam              #+#    #+#             */
-/*   Updated: 2021/08/02 19:17:39 by ksam             ###   ########lyon.fr   */
+/*   Created: 2021/08/24 18:14:04 by ksam              #+#    #+#             */
+/*   Updated: 2021/08/26 01:02:20 by ksam             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#ifndef CURE_H
+# define CURE_H
 
-WrongCat::WrongCat()
-{
-	type = "Wrong Cat";
-	std::cout << type << " is born" << std::endl;
-}
+#include <iostream>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-WrongCat::~WrongCat()
+class Cure : public AMateria
 {
-	std::cout << type << " is dead" << std::endl;
-}
-
-void WrongCat::makeSound() const
-{
-	std::cout << "Wrong Meow!!" << std::endl;
-}
+	public : 
+		Cure();
+		Cure(Cure const & cure);
+		~Cure();
+		virtual AMateria * clone() const;
+		virtual void use(ICharacter& target);
+};
+#endif
